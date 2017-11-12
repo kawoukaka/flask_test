@@ -14,6 +14,6 @@ $ flask run
 
 APP structure
 =============
-http://127.0.0.1/index  Login page (before login)
-http://127.0.0.1/join   Register page (before login)
-http://127.0.0.1/home   Home page (afterlogin)
+http://127.0.0.1/index  Login page (before login) <br />
+http://127.0.0.1/join   Register page (before login) <br />
+http://127.0.0.1/home   Home page (afterlogin) <br />
