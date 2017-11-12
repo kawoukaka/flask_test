@@ -7,8 +7,8 @@ home_blueprint = Blueprint('home_blueprint', __name__,template_folder='templates
 @home_blueprint.route('/home')
 def home():
     try:
-        if users.select().where(users.user_id == session['id']).count() == 1:
-            username = users.select().where(users.user_id == session['id']).get().user_name
+        if users.select().where(users.user_accesskey == session['key']).count() == 1:
+            username = users.select().where(users.user_accesskey == session['key']).get().user_name
     except:
         return '''Database Error!'''
 
@@ -17,9 +17,9 @@ def home():
 @home_blueprint.route('/logout',methods=['POST'])
 def logout():
     try:
-        if session['id'] != None:
-            users.update(user_status='offline').where(users.user_id==session['id'])
-            session.pop('id', None)
+        if session['key'] != None:
+            users.update(user_status='offline').where(users.user_id==session['key'])
+            session.pop('key', None)
             return redirect(url_for('index_blueprint.index'))
         else:
             return '''Already log out'''
