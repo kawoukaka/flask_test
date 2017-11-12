@@ -2,15 +2,15 @@
 
 ENV
 =============
-Python 3.5
-SQLlite 3.0
+Python 3.5 <br />
+SQLlite 3.0 <br />
 
 
 USAGE
 =============
-$ pip install -r requirements.txt
-$ export FLASK_APP=app.py
-$ flask run
+$ pip install -r requirements.txt <br />
+$ export FLASK_APP=app.py <br />
+$ flask run <br />
 
 APP structure
 =============
