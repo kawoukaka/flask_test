@@ -17,7 +17,7 @@ def home():
 @home_blueprint.route('/logout',methods=['POST'])
 def logout():
     if session['key'] != None:
-        users.update(user_status='offline').where(users.user_id==session['key'])
+        users.update(user_status='offline').where(users.user_accesskey==session['key'])
         session.pop('key', None)
         return redirect(url_for('index_blueprint.index'))
     else:

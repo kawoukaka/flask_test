@@ -37,7 +37,7 @@ def login():
             user = users.select().where(users.user_name==request.form['username']).first()
             if check_password_hash(user.user_password,request.form['password']):
                 session['key'] = user.user_accesskey
-                user.update(user_status='online').where(user.user_id==session['key'])
+                user.update(user_status='online').where(user.user_accesskey==session['key'])
                 return redirect(url_for('home_blueprint.home'))
             else:
                 return ''' Invalid Password! '''
